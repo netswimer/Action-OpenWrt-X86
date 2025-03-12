@@ -86,12 +86,13 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
+        rm -rf feeds/packages/net/geoview
 
     - name: Compile the firmware
       id: compile
       run: |
         cd openwrt
-        rm -rf feeds/kenzok8/v2ray-geoview
+        rm -rf feeds/packages/net/geoview
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
         echo "status=success" >> $GITHUB_OUTPUT
