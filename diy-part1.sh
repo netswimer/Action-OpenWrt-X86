@@ -19,5 +19,7 @@
 echo 'src-git kenzok8 https://github.com/kenzok8/small-package' >>feeds.conf.default
 echo 'src-git kenzok8d https://github.com/kenzok8/small' >>feeds.conf.default
 echo 'src-git cups https://github.com/Gr4ffy/lede-cups.git' >>feeds.conf.default
-# echo 'src-git geoviewd https://github.com/snowie2000/geoview' >>feeds.conf.default
+echo 'src-git passwall2 https://github.com/Openwrt-Passwall/openwrt-passwall2.git' >>feeds.conf.default
+echo 'src-git passwall2d https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git' >>feeds.conf.default
+
   
