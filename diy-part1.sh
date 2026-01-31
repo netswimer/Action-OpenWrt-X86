@@ -17,7 +17,7 @@
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 echo 'src-git kenzok8 https://github.com/kenzok8/small-package.git;main' >>feeds.conf.default
-echo 'src-git kenzok8d https://github.com/kenzok8/small.git;main' >>feeds.conf.default
+echo 'src-git kenzok8d https://github.com/kenzok8/small.git;master' >>feeds.conf.default
 echo 'src-git cups https://github.com/Gr4ffy/lede-cups.git' >>feeds.conf.default
 echo 'src-git passwall2 https://github.com/Openwrt-Passwall/openwrt-passwall2.git;main' >>feeds.conf.default
 echo 'src-git passwall2d https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main' >>feeds.conf.default
