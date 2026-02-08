@@ -35,7 +35,16 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@main
-
+    - name: Set up Go
+      uses: actions/setup-go@v6
+      with:
+          go-version: '>=1.25.7'
+          cache: true
+          
+    - name: Allow Go auto toolchain
+      run: 
+         go env -w GOTOOLCHAIN=auto
+         
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -116,7 +125,7 @@ jobs:
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
         cd openwrt/bin/targets/*/*
-        rm -rf packages
+        rm -rf packages feeds.buildinfo version.buildinfo sha256sums profiles.json *.sha *.manifest config.buildinfo
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
