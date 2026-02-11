@@ -31,7 +31,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-22.04
-
     steps:
     - name: Checkout
       uses: actions/checkout@main
@@ -44,7 +43,9 @@ jobs:
     - name: Allow Go auto toolchain
       run: 
          go env -w GOTOOLCHAIN=auto
-         
+    - name: Maximize build space
+      uses: easimon/maximize-build-space@v10  
+       
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
