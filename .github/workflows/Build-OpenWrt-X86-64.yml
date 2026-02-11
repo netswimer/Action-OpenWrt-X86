@@ -43,8 +43,18 @@ jobs:
     - name: Allow Go auto toolchain
       run: 
          go env -w GOTOOLCHAIN=auto
-    - name: Maximize build space
-      uses: easimon/maximize-build-space@v10  
+      
+    - name: Maximize available disk space
+      uses: easimon/maximize-build-space@master   # 或指定 tag 如 @v10 如果有新版
+      with:
+          root-reserve-mb: 2048          # 根分区预留 2GB 保险，不建议设太小
+          swap-size-mb: 2048             # 增加 swap 到 2GB，防 OOM（OpenWrt 编译很吃内存）
+          temp-reserve-mb: 1024
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
        
     - name: Initialization environment
       env:
